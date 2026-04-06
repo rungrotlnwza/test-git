@@ -40,44 +40,55 @@
 
   <main class="hero-wrap">
     <div class="container">
-      <div class="hero-card p-4 p-lg-5">
+      <div class="hero-card p-4 p-lg-5 lift-in">
         <div class="row align-items-center g-4 g-lg-5">
           <div class="col-lg-7">
-            <span class="hero-kicker mb-3">Bootstrap 5 Login Experience</span>
-            <h1 class="display-title mb-3">หน้าเข้าใช้งานที่ดูดีขึ้นตั้งแต่ครั้งแรกที่เปิด</h1>
+            <span class="hero-kicker mb-3">BS5 Auth Starter</span>
+            <h1 class="display-title mb-3">ยกระดับหน้าแรกให้ดูเหมือนระบบจริง ไม่ใช่แค่หน้า demo</h1>
             <p class="lead text-muted-soft mb-4">
-              โทนเข้มแบบ modern dashboard, card โปร่งนิด ๆ, ปุ่มเด่นชัด และฟอร์มที่อ่านง่ายทั้งบน desktop กับ mobile
+              หน้าแรกนี้ถูกออกแบบให้เป็น landing page สำหรับระบบ auth โดยเฉพาะ มี hero, section แนะนำ, ปุ่มพาไปใช้งานจริง
+              และโทนภาพรวมที่เข้าชุดกับหน้า Login และ Register
             </p>
             <div class="d-flex flex-column flex-sm-row gap-3">
-              <a class="btn glow-button rounded-pill px-4 py-3" href="./login.html">ไปหน้า Login</a>
-              <a class="btn soft-button rounded-pill px-4 py-3" href="./register.html">ไปหน้า Register</a>
+              <a class="btn glow-button rounded-pill px-4 py-3" href="./login.html">เริ่มที่ Login</a>
+              <a class="btn soft-button rounded-pill px-4 py-3" href="./register.html">สร้างบัญชีใหม่</a>
+            </div>
+            <div class="mini-pill-row mt-4">
+              <span class="mini-pill">Responsive Layout</span>
+              <span class="mini-pill">Bootstrap 5 Base</span>
+              <span class="mini-pill">Glassmorphism UI</span>
             </div>
           </div>
           <div class="col-lg-5">
-            <div class="row g-3">
-              <div class="col-sm-6">
-                <div class="metric-card h-100">
-                  <div class="metric-number">01</div>
-                  <div class="fw-bold mb-1">Visual ที่ชัดขึ้น</div>
-                  <div class="text-muted-soft">มี hierarchy ชัด ดูไม่เหมือนหน้า template เริ่มต้น</div>
+            <div class="preview-shell">
+              <div class="preview-card primary float-card">
+                <div class="preview-topbar">
+                  <div class="preview-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="preview-label">LOGIN</div>
                 </div>
+                <div class="preview-line short mb-3"></div>
+                <div class="preview-field"></div>
+                <div class="preview-field"></div>
+                <div class="preview-submit"></div>
               </div>
-              <div class="col-sm-6">
-                <div class="metric-card h-100">
-                  <div class="metric-number">02</div>
-                  <div class="fw-bold mb-1">Responsive พร้อมใช้</div>
-                  <div class="text-muted-soft">เลย์เอาต์แตกลงมือถือได้สวยโดยไม่ต้องแก้เพิ่ม</div>
+              <div class="preview-card secondary float-card">
+                <div class="preview-topbar">
+                  <div class="preview-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="preview-label">REGISTER</div>
                 </div>
-              </div>
-              <div class="col-12">
-                <div class="feature-pill p-4">
-                  <div class="section-kicker mb-3">Auth Pages</div>
-                  <h2 class="h3 auth-title mb-3">โครงสร้างพร้อมต่อยอดระบบจริง</h2>
-                  <p class="text-muted-soft mb-4">
-                    ต่อ API login, register, validation หรือ social sign-in ได้ต่อจากฟอร์มนี้เลย
-                  </p>
-                  <a class="ghost-link fw-semibold" href="./login.html">ดูหน้าใช้งานจริง</a>
-                </div>
+                <div class="preview-line medium mb-3"></div>
+                <div class="preview-field sm"></div>
+                <div class="preview-field sm"></div>
+                <div class="preview-field sm"></div>
+                <div class="preview-submit"></div>
               </div>
             </div>
           </div>
@@ -85,6 +96,113 @@
       </div>
     </div>
   </main>
+
+  <section class="section-space">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-4">
+          <span class="section-kicker mb-3">Why This Works</span>
+          <h2 class="auth-title mb-3">หน้าแรกที่ช่วยให้ทั้งชุดดูมีน้ำหนักขึ้น</h2>
+          <p class="text-muted-soft mb-0">
+            แทนที่จะมีแค่ลิงก์ไปหน้าอื่น ตอนนี้ `index.html` มีบทบาทเป็นจุดเริ่มต้นของระบบ ช่วยสื่อภาพรวมและนำผู้ใช้ไป flow ที่ต้องการได้ชัดขึ้น
+          </p>
+        </div>
+        <div class="col-lg-8">
+          <div class="feature-grid">
+            <article class="glass-panel feature-card">
+              <div class="feature-index">01</div>
+              <h3 class="h4 mb-2">Visual Direction ชัด</h3>
+              <p class="text-muted-soft mb-0">ใช้โทนมืดผสม accent เขียวอมฟ้ากับส้มอ่อน ทำให้หน้าดู modern โดยยังอ่านง่าย</p>
+            </article>
+            <article class="glass-panel feature-card">
+              <div class="feature-index">02</div>
+              <h3 class="h4 mb-2">เชื่อมสองหน้า auth</h3>
+              <p class="text-muted-soft mb-0">ผู้ใช้เห็นเลยว่ามีทั้ง Login และ Register พร้อมปุ่มไปใช้งานต่อแบบเด่นชัด</p>
+            </article>
+            <article class="glass-panel feature-card">
+              <div class="feature-index">03</div>
+              <h3 class="h4 mb-2">พร้อมต่อยอดระบบจริง</h3>
+              <p class="text-muted-soft mb-0">โครงสร้าง HTML และ class ถูกจัดไว้ให้ต่อ API, validation หรือ auth flow เพิ่มได้ง่าย</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space pt-0">
+    <div class="container">
+      <div class="glass-panel p-4 p-lg-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <span class="section-kicker mb-3">Choose Your Path</span>
+            <h2 class="auth-title mb-3">เลือกปลายทางที่ผู้ใช้ต้องการได้ทันที</h2>
+            <p class="text-muted-soft mb-0">
+              ถ้าต้องการให้หน้าแรกมี conversion ที่ชัด หน้าแบบนี้จะช่วยให้ปุ่มหลักเด่นและ flow ของผู้ใช้ไม่หลงทาง
+            </p>
+          </div>
+          <div class="col-lg-7">
+            <div class="portal-grid">
+              <a class="glass-panel portal-card" href="./login.html">
+                <div class="portal-badge mb-3">LG</div>
+                <h3 class="h4 mb-2">Login Portal</h3>
+                <p class="text-muted-soft mb-4">สำหรับผู้ใช้เดิมที่ต้องการกลับเข้าระบบอย่างรวดเร็ว</p>
+                <span class="ghost-link fw-semibold">เปิดหน้า Login</span>
+              </a>
+              <a class="glass-panel portal-card" href="./register.html">
+                <div class="portal-badge mb-3">RG</div>
+                <h3 class="h4 mb-2">Register Portal</h3>
+                <p class="text-muted-soft mb-4">สำหรับผู้ใช้ใหม่ที่ต้องการสมัครบัญชีและเริ่มใช้งาน</p>
+                <span class="ghost-link fw-semibold">เปิดหน้า Register</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space pt-0">
+    <div class="container">
+      <div class="path-steps">
+        <article class="glass-panel step-card">
+          <strong>Step 1</strong>
+          <p class="text-muted-soft mb-0">ผู้ใช้เข้าหน้าแรกและเห็นภาพรวมของระบบในไม่กี่วินาที</p>
+        </article>
+        <article class="glass-panel step-card">
+          <strong>Step 2</strong>
+          <p class="text-muted-soft mb-0">เลือกว่าจะ Login หรือ Register จาก CTA ที่ชัดเจน</p>
+        </article>
+        <article class="glass-panel step-card">
+          <strong>Step 3</strong>
+          <p class="text-muted-soft mb-0">เข้าสู่ flow ของฟอร์มที่ถูกจัด visual ไว้พร้อมใช้งานต่อทันที</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space pt-0">
+    <div class="container">
+      <div class="glass-panel cta-panel text-center">
+        <span class="section-kicker mb-3">Ready To Ship</span>
+        <h2 class="auth-title mb-3">หน้าแรกพร้อมเป็นจุดเริ่มต้นของ auth flow แล้ว</h2>
+        <p class="text-muted-soft mx-auto mb-4" style="max-width: 42rem;">
+          ถ้าต้องการขั้นต่อไป เราสามารถเพิ่ม animation ปุ่ม, validation ฝั่ง client, หรือเชื่อม `index.js` ให้ส่งข้อมูลฟอร์มเข้าระบบจริงต่อได้เลย
+        </p>
+        <div class="d-flex justify-content-center flex-column flex-sm-row gap-3">
+          <a class="btn glow-button rounded-pill px-4 py-3" href="./login.html">ทดสอบหน้า Login</a>
+          <a class="btn soft-button rounded-pill px-4 py-3" href="./register.html">ทดสอบหน้า Register</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-copy">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>BS5 Studio Landing</span>
+      <span>Bootstrap 5 + Custom Glass UI</span>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
