@@ -1,78 +1,140 @@
 <!doctype html>
-<html lang="en">
+<html lang="th">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap demo</title>
+  <title>Register | BS5 Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
-<body>
-  <nav class="navbar navbar-expand bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <div class="d-flex" role="search">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./login.html">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./register.html">Register</a>
-            </li>
-          </ul>
-        </div>
+<body class="site-shell">
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-blend">
+    <div class="container py-2">
+      <a class="navbar-brand d-flex align-items-center gap-3 fw-semibold" href="/">
+        <span class="brand-mark">B5</span>
+        <span>BS5 Studio</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 flex-wrap justify-content-end">
+        <a class="nav-link px-3" href="./login.html">Login</a>
+        <a class="btn soft-button rounded-pill px-4" href="./register.html">Register</a>
       </div>
     </div>
   </nav>
-  <div class="container-fluid text-center">
-    <div class="mb-3 row">
-      <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="staticEmail" value="email@example.com">
+
+  <main class="auth-wrap">
+    <div class="container">
+      <div class="auth-card">
+        <div class="row g-0">
+          <div class="col-lg-5">
+            <section class="auth-aside h-100 d-flex flex-column justify-content-between">
+              <div>
+                <span class="info-badge mb-4">Create account</span>
+                <h1 class="auth-title mb-3">เริ่มต้นใช้งานด้วยหน้า Register ที่ดูมืออาชีพขึ้น</h1>
+                <p class="text-muted-soft mb-4">
+                  ออกแบบให้มีข้อมูลนำสายตา, ระยะหายใจดี และพร้อมต่อเข้าระบบสมัครสมาชิกจริงได้สะดวก
+                </p>
+                <div class="feature-list">
+                  <div class="feature-item">
+                    <strong>ฟอร์มครบในหน้าเดียว</strong>
+                    <span class="text-muted-soft">เก็บชื่อ, อีเมล, ประเภทบัญชี และรหัสผ่านแบบเป็นระเบียบ</span>
+                  </div>
+                  <div class="feature-item">
+                    <strong>ภาพรวมดู trustworthy</strong>
+                    <span class="text-muted-soft">โทนสีและองค์ประกอบช่วยให้หน้าสมัครดูน่าเชื่อถือขึ้น</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stat-strip mt-4">
+                <div class="stat-box">
+                  <strong>Easy</strong>
+                  <span class="small-copy">สมัครไว</span>
+                </div>
+                <div class="stat-box">
+                  <strong>Safe</strong>
+                  <span class="small-copy">ดูน่าเชื่อถือ</span>
+                </div>
+                <div class="stat-box">
+                  <strong>Ready</strong>
+                  <span class="small-copy">ต่อ backend</span>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-lg-7">
+            <section class="auth-panel">
+              <div class="mb-4">
+                <span class="section-kicker mb-3">Join us</span>
+                <h2 class="auth-title mb-2">สร้างบัญชีใหม่</h2>
+                <p class="text-muted-soft mb-0">กรอกข้อมูลด้านล่างเพื่อเริ่มต้นใช้งานระบบของคุณ</p>
+              </div>
+
+              <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label">First name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="Rungrot" autocomplete="given-name" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label">Last name</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="L." autocomplete="family-name" required>
+                </div>
+
+                <div class="col-12">
+                  <label for="registerEmail" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="registerEmail" placeholder="name@example.com" autocomplete="email" required>
+                </div>
+
+                <div class="col-12">
+                  <label for="accountType" class="form-label">Account type</label>
+                  <select class="form-select" id="accountType">
+                    <option selected>Personal account</option>
+                    <option>Team account</option>
+                    <option>Business account</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="registerPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="registerPassword" placeholder="Create a strong password" autocomplete="new-password" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="confirmPassword" class="form-label">Confirm password</label>
+                  <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" autocomplete="new-password" required>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="termsCheck" required>
+                    <label class="form-check-label" for="termsCheck">
+                      ฉันยอมรับเงื่อนไขการใช้งานและนโยบายความเป็นส่วนตัว
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-12 pt-2">
+                  <button type="submit" class="btn glow-button w-100 rounded-4 py-3">Create account</button>
+                </div>
+              </form>
+
+              <p class="small-copy mt-4 mb-0">
+                มีบัญชีอยู่แล้ว?
+                <a class="accent-link fw-semibold" href="./login.html">กลับไปหน้า Login</a>
+              </p>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="mb-3 row">
-      <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword">
-      </div>
-    </div>
-    <div class="mb-3 row">
-      <label for="inputPassword" class="col-sm-2 col-form-label">confirme Password</label>
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword">
-      </div>
-    </div>
-  </div>
+  </main>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
