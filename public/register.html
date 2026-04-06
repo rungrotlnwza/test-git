@@ -152,7 +152,7 @@
           })
         })
         .then(response => {
-          if (!response.ok) {
+          if (response.ok) {
             console.log(response)
             window.location = 'login.html'
           }

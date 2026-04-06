@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <img id="imgid" src="" alt="">
+  <h1 id="fullName">fullName</h1>
+  <h1 id="username"> username </h1>
+  <h1 id="email">email</h1>
+  <h1 id="phone">phone</h1>
+  <h1 id="accountType">accountType</h1>
+  <h1 id="memberSince">memberSince</h1>
+  <h1 id="profileImage">profileImage</h1>
+  <script>
+    fetch('/api/user', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('fullName').innerHTML = data.user.fullName || '-';
+        document.getElementById('username').innerHTML = data.user.username;
+        document.getElementById('email').innerHTML = data.user.email;
+        document.getElementById('phone').innerHTML = data.user.phone;
+        document.getElementById('accountType').innerHTML = data.user.accountType;
+        document.getElementById('memberSince').innerHTML = data.user.memberSince
+        document.getElementById('imgid').src = data.user.profileImage
+      })
+  </script>
+
+</body>
+
+</html>
