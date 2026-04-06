@@ -1,0 +1,17 @@
+{
+    "editor.formatOnSave": true,
+    "html.format.wrapLineLength": 9999,
+    "[html]": {
+        "editor.defaultFormatter": "j69.ejs-beautify"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[ejs]": {
+        "editor.defaultFormatter": "j69.ejs-beautify",
+        "editor.formatOnSave": true
+    }
+}
