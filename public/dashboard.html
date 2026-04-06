@@ -32,7 +32,7 @@
             <a class="nav-link active" aria-current="page" href="./dashboard.html">Dashboard</a>
           </li>
           <li class="nav-item">
-            <button type="button" class="btn soft-button rounded-pill px-4 mt-3 mt-lg-0" id="navLogoutBtn">Logout</button>
+            <a class="btn soft-button rounded-pill px-4 mt-3 mt-lg-0" href="./login.html">Logout</a>
           </li>
         </ul>
       </div>
@@ -44,24 +44,34 @@
       <section class="glass-surface dashboard-hero">
         <div class="hero-copy">
           <span class="section-kicker mb-3">MiniBank Control Center</span>
-          <h1 class="auth-title mb-3">แดชบอร์ดแบบ HTML ปกติที่เปิดได้เลยจากโฟลเดอร์ public</h1>
+          <h1 class="auth-title mb-3">หน้า dashboard สำหรับฝึกต่อยอด JavaScript ด้วยตัวเอง</h1>
           <p class="text-muted-soft mb-4">
-            หน้านี้ออกแบบให้เป็นเวอร์ชันไม่ใช้ React แต่ยังคงความรู้สึกของ dashboard เดิมไว้ ทั้งยอดเงิน, quick actions,
-            filter, กราฟสรุปรายวัน และตารางรายการที่จัดการได้จากหน้าเดียว
+            โครงหน้านี้ออกแบบด้วย HTML และ CSS ล้วน มีองค์ประกอบครบทั้ง summary, ปุ่ม action, filter, chart mockup และตารางรายการ
+            เพื่อให้คุณใช้เป็นสนามฝึกเขียน JavaScript ต่อเองได้สะดวก
           </p>
           <div class="hero-chip-row">
-            <span class="hero-chip">Vanilla HTML</span>
-            <span class="hero-chip">LocalStorage Data</span>
-            <span class="hero-chip">Responsive Dashboard</span>
+            <span class="hero-chip">Static HTML</span>
+            <span class="hero-chip">Design Practice</span>
+            <span class="hero-chip">Ready For JS</span>
           </div>
         </div>
 
         <div class="glass-subpanel profile-summary">
-          <div class="profile-avatar" id="profileAvatar">G</div>
+          <div class="profile-avatar">R</div>
           <div class="profile-info">
             <span class="eyebrow">Active account</span>
-            <h2 id="profileName">Guest User</h2>
-            <p id="profileEmail" class="text-muted-soft mb-0">guest@example.com</p>
+            <h2>Rungrot L.</h2>
+            <p class="text-muted-soft mb-0">rungrot@example.com</p>
+          </div>
+          <div class="profile-meta-list">
+            <div class="profile-meta-item">
+              <span>Account Type</span>
+              <strong>Personal Plus</strong>
+            </div>
+            <div class="profile-meta-item">
+              <span>Member Since</span>
+              <strong>January 2026</strong>
+            </div>
           </div>
         </div>
       </section>
@@ -73,117 +83,187 @@
               <span class="eyebrow">Current balance</span>
               <h2>ยอดเงินคงเหลือ</h2>
             </div>
-            <button type="button" class="mini-action" id="toggleBalanceBtn">ดูเต็ม</button>
+            <span class="mini-action">ตัวอย่าง</span>
           </div>
 
-          <div class="balance-display" id="balanceValue">THB 0</div>
+          <div class="balance-display">฿42,350.50</div>
 
           <div class="action-grid">
-            <button type="button" class="btn glow-button dashboard-action" data-open-modal="transfer">โอนเงิน</button>
-            <button type="button" class="btn soft-button dashboard-action" data-open-modal="bill">จ่ายบิล</button>
-            <button type="button" class="btn soft-button dashboard-action success-tone" data-open-modal="topup">เติมเงิน</button>
-            <button type="button" class="btn soft-button dashboard-action danger-tone" data-open-modal="withdrawal">ถอนเงิน</button>
+            <button type="button" class="btn glow-button dashboard-action">โอนเงิน</button>
+            <button type="button" class="btn soft-button dashboard-action">จ่ายบิล</button>
+            <button type="button" class="btn soft-button dashboard-action success-tone">เติมเงิน</button>
+            <button type="button" class="btn soft-button dashboard-action danger-tone">ถอนเงิน</button>
           </div>
 
           <div class="stats-grid">
             <article class="mini-stat">
               <span>รายรับเดือนนี้</span>
-              <strong id="incomeThisMonth">THB 0</strong>
-              <small id="incomeCount">0 รายการ</small>
+              <strong>฿16,800</strong>
+              <small>5 รายการ</small>
             </article>
             <article class="mini-stat">
               <span>รายจ่ายเดือนนี้</span>
-              <strong id="expenseThisMonth">THB 0</strong>
-              <small id="expenseCount">0 รายการ</small>
+              <strong>฿9,340</strong>
+              <small>7 รายการ</small>
             </article>
           </div>
 
           <div class="side-note">
-            <h3>หมายเหตุ</h3>
+            <h3>แนวทางฝึก JS</h3>
             <p class="text-muted-soft mb-0">
-              ข้อมูลตัวอย่างจะถูกเก็บแยกตามผู้ใช้ใน `localStorage` เพื่อให้ทดสอบ flow ได้แม้ไม่มี backend เต็มรูปแบบ
+              คุณสามารถเริ่มจากทำปุ่ม tab ให้ active, ทำ search filter, เปลี่ยนตัวเลข summary หรือเขียน modal เปิดปิดจากหน้า static นี้ต่อได้เลย
             </p>
           </div>
 
           <div class="side-actions">
-            <button type="button" class="btn soft-button dashboard-action secondary" id="resetDemoBtn">รีเซ็ตข้อมูลตัวอย่าง</button>
-            <button type="button" class="btn soft-button dashboard-action secondary" id="logoutBtn">ออกจากระบบ</button>
+            <button type="button" class="btn soft-button dashboard-action secondary">เพิ่มรายการใหม่</button>
+            <button type="button" class="btn soft-button dashboard-action secondary">ดูโปรไฟล์</button>
           </div>
         </aside>
 
         <section class="glass-surface main-panel">
           <div class="panel-heading main">
             <div>
-              <span class="eyebrow" id="activeTabLabel">Daily activity</span>
-              <h2 id="activityTitle">รายการของคุณ</h2>
+              <span class="eyebrow">Daily activity</span>
+              <h2>ประวัติการโอนเงิน</h2>
             </div>
-            <div class="record-pill" id="recordCount">0 รายการ</div>
+            <div class="record-pill">3 รายการ</div>
           </div>
 
           <div class="toolbar-wrap">
-            <div class="tab-row" id="tabRow">
-              <button type="button" class="tab-btn active" data-tab="transfers">Transfers</button>
-              <button type="button" class="tab-btn" data-tab="withdrawals">Withdrawals</button>
-              <button type="button" class="tab-btn" data-tab="topups">Topups</button>
-              <button type="button" class="tab-btn" data-tab="bills">Bills</button>
-              <button type="button" class="tab-btn" data-tab="schedule">Schedule</button>
+            <div class="tab-row">
+              <button type="button" class="tab-btn active">Transfers</button>
+              <button type="button" class="tab-btn">Withdrawals</button>
+              <button type="button" class="tab-btn">Topups</button>
+              <button type="button" class="tab-btn">Bills</button>
+              <button type="button" class="tab-btn">Schedule</button>
             </div>
 
-            <div class="range-row" id="rangeRow">
-              <button type="button" class="range-btn" data-range="today">วันนี้</button>
-              <button type="button" class="range-btn" data-range="yesterday">เมื่อวาน</button>
-              <button type="button" class="range-btn active" data-range="this">เดือนนี้</button>
-              <button type="button" class="range-btn" data-range="last">เดือนก่อน</button>
-              <button type="button" class="range-btn" data-range="all">ทั้งหมด</button>
-              <button type="button" class="range-btn" data-range="custom">เลือกช่วง</button>
-            </div>
-
-            <div class="custom-range is-hidden" id="customRangeFields">
-              <label class="date-field">
-                <span>From</span>
-                <input type="date" id="fromDate">
-              </label>
-              <label class="date-field">
-                <span>To</span>
-                <input type="date" id="toDate">
-              </label>
-              <button type="button" class="mini-action" id="clearCustomRangeBtn">Clear</button>
+            <div class="range-row">
+              <button type="button" class="range-btn">วันนี้</button>
+              <button type="button" class="range-btn">เมื่อวาน</button>
+              <button type="button" class="range-btn active">เดือนนี้</button>
+              <button type="button" class="range-btn">เดือนก่อน</button>
+              <button type="button" class="range-btn">ทั้งหมด</button>
+              <button type="button" class="range-btn">เลือกช่วง</button>
             </div>
 
             <label class="search-box" for="searchInput">
               <span aria-hidden>⌕</span>
-              <input id="searchInput" type="text" placeholder="ค้นหาจากชื่อ, ผู้ให้บริการ, หมายเหตุ หรือเลขอ้างอิง">
+              <input id="searchInput" type="text" placeholder="พื้นที่สำหรับฝึกทำ search filter">
             </label>
+
+            <div class="learning-note">
+              จุดนี้ตั้งใจปล่อยเป็น static ไว้ เพื่อให้คุณเติม JavaScript เองภายหลัง เช่นคลิก tab แล้วเปลี่ยนตาราง หรือกรองรายการตามคำค้น
+            </div>
           </div>
 
           <section class="chart-card">
             <div class="chart-head">
               <div>
                 <span class="eyebrow">Chart overview</span>
-                <h3 id="chartTitle">กราฟสรุปรายวัน</h3>
+                <h3>กราฟโอนเงินรายวัน</h3>
               </div>
               <div class="chart-kpis">
                 <div class="chart-kpi">
                   <span>รวม</span>
-                  <strong id="chartTotal">THB 0</strong>
+                  <strong>฿6,830</strong>
                 </div>
                 <div class="chart-kpi">
                   <span>ล่าสุด</span>
-                  <strong id="chartLatest">THB 0</strong>
+                  <strong>฿780</strong>
                 </div>
               </div>
             </div>
 
-            <div class="chart-body" id="chartBody">
-              <div class="chart-empty">กำลังเตรียมข้อมูล...</div>
+            <div class="chart-body">
+              <div class="chart-bars">
+                <div class="chart-bar-col">
+                  <div class="chart-bar-value">฿1.85K</div>
+                  <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="--bar-height: 68%"></div>
+                  </div>
+                  <div class="chart-bar-label">29/03</div>
+                </div>
+                <div class="chart-bar-col">
+                  <div class="chart-bar-value">฿4.20K</div>
+                  <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="--bar-height: 100%"></div>
+                  </div>
+                  <div class="chart-bar-label">02/04</div>
+                </div>
+                <div class="chart-bar-col">
+                  <div class="chart-bar-value">฿780</div>
+                  <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="--bar-height: 28%"></div>
+                  </div>
+                  <div class="chart-bar-label">05/04</div>
+                </div>
+                <div class="chart-bar-col">
+                  <div class="chart-bar-value">฿1.20K</div>
+                  <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="--bar-height: 46%"></div>
+                  </div>
+                  <div class="chart-bar-label">06/04</div>
+                </div>
+              </div>
             </div>
           </section>
 
           <section class="table-card">
             <div class="table-scroller">
               <table class="activity-table">
-                <thead id="tableHead"></thead>
-                <tbody id="tableBody"></tbody>
+                <thead>
+                  <tr>
+                    <th>วันเวลา</th>
+                    <th>ปลายทาง</th>
+                    <th>หมายเหตุ</th>
+                    <th>ยอดโอน</th>
+                    <th>สถานะ</th>
+                    <th>จัดการ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>29/03/2026 09:15</td>
+                    <td class="cell-strong">KBank 482-1-4421</td>
+                    <td class="cell-muted">ค่าอุปกรณ์ออฟฟิศ</td>
+                    <td class="amount-negative">-฿1,850.00</td>
+                    <td><span class="status-pill good">สำเร็จ</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <button type="button" class="table-btn">ดู</button>
+                        <button type="button" class="table-btn danger">ลบ</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>02/04/2026 14:05</td>
+                    <td class="cell-strong">SCB 114-9-0201</td>
+                    <td class="cell-muted">จ่ายค่าฟรีแลนซ์</td>
+                    <td class="amount-negative">-฿4,200.00</td>
+                    <td><span class="status-pill good">สำเร็จ</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <button type="button" class="table-btn">ดู</button>
+                        <button type="button" class="table-btn danger">ลบ</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>05/04/2026 11:40</td>
+                    <td class="cell-strong">พร้อมเพย์ 089-123-4567</td>
+                    <td class="cell-muted">ค่าเดินทาง</td>
+                    <td class="amount-negative">-฿780.00</td>
+                    <td><span class="status-pill good">สำเร็จ</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <button type="button" class="table-btn">ดู</button>
+                        <button type="button" class="table-btn danger">ลบ</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </section>
@@ -192,19 +272,6 @@
     </div>
   </main>
 
-  <div class="dashboard-modal-backdrop is-hidden" id="modalBackdrop">
-    <div class="dashboard-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="dashboard-modal-head">
-        <h3 id="modalTitle">Modal</h3>
-        <button type="button" class="mini-action" id="modalCloseBtn">ปิด</button>
-      </div>
-      <div class="dashboard-modal-body" id="modalBody"></div>
-    </div>
-  </div>
-
-  <div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
-
-  <script src="./dashboard.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
