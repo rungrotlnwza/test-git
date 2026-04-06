@@ -75,10 +75,10 @@
                 <p class="text-muted-soft mb-0">ใส่อีเมลและรหัสผ่านเพื่อเข้าใช้งานระบบของคุณ</p>
               </div>
 
-              <form class="row g-3">
+              <div class="row g-3">
                 <div class="col-12">
                   <label for="loginEmail" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" autocomplete="email" required>
+                  <input id="email" type="email" class="form-control" id="loginEmail" placeholder="name@example.com" autocomplete="email" required>
                 </div>
 
                 <div class="col-12">
@@ -86,7 +86,7 @@
                     <label for="loginPassword" class="form-label">Password</label>
                     <a class="accent-link small fw-semibold" href="#">ลืมรหัสผ่าน?</a>
                   </div>
-                  <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" autocomplete="current-password" required>
+                  <input id="password" type="password" class="form-control" id="loginPassword" placeholder="Enter your password" autocomplete="current-password" required>
                 </div>
 
                 <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-2">
@@ -100,7 +100,7 @@
                 </div>
 
                 <div class="col-12 pt-2">
-                  <button type="submit" class="btn glow-button w-100 rounded-4 py-3">Login to dashboard</button>
+                  <button onclick="login()" type="submit" class="btn glow-button w-100 rounded-4 py-3">Login to dashboard</button>
                 </div>
 
                 <div class="col-12">
@@ -113,7 +113,7 @@
                 <div class="col-sm-6">
                   <button type="button" class="btn soft-button w-100 rounded-4 py-3">Continue with GitHub</button>
                 </div>
-              </form>
+              </div>
 
               <p class="small-copy mt-4 mb-0">
                 ยังไม่มีบัญชี?
@@ -125,7 +125,29 @@
       </div>
     </div>
   </main>
+  <script>
+    function login() {
+      // console.log('login')
+      fetch('/api/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            // สามารถใส่ Authorization header ตรงนี้ได้
+          },
+          body: JSON.stringify({
+            "email": document.getElementById('email').value,
+            "password": document.getElementById('password').value
+          })
+        })
 
+        .then(response => {
+          if (!response.ok) {
+            window.location = 'dashbord.html'
+          }
+        })
+      // .then(data => console.log(data))
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 

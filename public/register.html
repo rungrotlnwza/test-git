@@ -75,20 +75,20 @@
                 <p class="text-muted-soft mb-0">กรอกข้อมูลด้านล่างเพื่อเริ่มต้นใช้งานระบบของคุณ</p>
               </div>
 
-              <form class="row g-3">
+              <div class="row g-3">
                 <div class="col-md-6">
                   <label for="firstName" class="form-label">First name</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="Rungrot" autocomplete="given-name" required>
+                  <input id="First" type="text" class="form-control" id="firstName" placeholder="Rungrot" autocomplete="given-name" required>
                 </div>
 
                 <div class="col-md-6">
                   <label for="lastName" class="form-label">Last name</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="L." autocomplete="family-name" required>
+                  <input id="Last" type="text" class="form-control" id="lastName" placeholder="L." autocomplete="family-name" required>
                 </div>
 
                 <div class="col-12">
                   <label for="registerEmail" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="registerEmail" placeholder="name@example.com" autocomplete="email" required>
+                  <input id="Email" type="email" class="form-control" id="registerEmail" placeholder="name@example.com" autocomplete="email" required>
                 </div>
 
                 <div class="col-12">
@@ -102,12 +102,12 @@
 
                 <div class="col-md-6">
                   <label for="registerPassword" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="registerPassword" placeholder="Create a strong password" autocomplete="new-password" required>
+                  <input id="Password" type="password" class="form-control" id="registerPassword" placeholder="Create a strong password" autocomplete="new-password" required>
                 </div>
 
                 <div class="col-md-6">
                   <label for="confirmPassword" class="form-label">Confirm password</label>
-                  <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" autocomplete="new-password" required>
+                  <input id="Confirm" type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" autocomplete="new-password" required>
                 </div>
 
                 <div class="col-12">
@@ -120,9 +120,9 @@
                 </div>
 
                 <div class="col-12 pt-2">
-                  <button type="submit" class="btn glow-button w-100 rounded-4 py-3">Create account</button>
+                  <button onclick="register()" type="submit" class="btn glow-button w-100 rounded-4 py-3">Create account</button>
                 </div>
-              </form>
+              </div>
 
               <p class="small-copy mt-4 mb-0">
                 มีบัญชีอยู่แล้ว?
@@ -134,7 +134,33 @@
       </div>
     </div>
   </main>
+  <script>
+    function register() {
+      // console.log('login')
+      fetch('/api/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            // สามารถใส่ Authorization header ตรงนี้ได้
+          },
+          body: JSON.stringify({
+            "First": document.getElementById('First').value,
+            "Last": document.getElementById('Last').value,
+            "Email": document.getElementById('Email').value,
+            "Password": document.getElementById('Password').value,
+            "Confirm": document.getElementById('Confirm').value,
+          })
+        })
+        .then(response => {
+          if (!response.ok) {
+            console.log(response)
+            window.location = 'login.html'
+          }
+          // response.json()
 
+        })
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
